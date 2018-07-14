@@ -3,4 +3,10 @@ name = "atadb"
 version = "0.1.0"
 authors = ["Mark <mverleg.noreply@gmail.com>"]
 
+[lib]
+name = "atadb"
+
+[[bin]]
+name = "atadb"
+
 [dependencies]
