@@ -1,10 +1,10 @@
 
 pub enum DataType {
     Bool,
-    Int(u32),
-    Float(u32),
-    Decimal(u32, u32),
+    Int(Option<u32>),
+    Float(Option<u32>),
+    Decimal(Option<u32>, Option<u32>),
     Datetime,
-    String(u32),
-    Binary(u32),
+    String(Option<u32>),
+    Binary(Option<u32>),
 }

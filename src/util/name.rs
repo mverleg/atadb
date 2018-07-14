@@ -6,7 +6,7 @@ pub struct Name {
 impl Name {
     pub fn new(name: String) -> Option<Self> {
         for chr in name.chars() {
-            if ! chr.is_alphabetic() {
+            if ! chr.is_alphabetic() && chr != '_' {
                 return Option::None;
             }
         }
