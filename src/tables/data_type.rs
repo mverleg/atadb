@@ -1,4 +1,5 @@
 
+#[derive(Debug)]
 pub enum DataType {
     Bool,
     Int(Option<u32>),

@@ -1,4 +1,5 @@
 
+#[derive(Debug)]
 pub struct Name {
     name: String,
 }
@@ -11,5 +12,12 @@ impl Name {
             }
         }
         Option::Some(Name { name })
+    }
+
+    pub fn valid(name: &str) -> Self {
+        match Self::new(name.to_owned()) {
+            Some(name) => name,
+            None => panic!(),
+        }
     }
 }

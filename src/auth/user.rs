@@ -1,5 +1,6 @@
 use util::name::Name;
 
+#[derive(Debug)]
 pub enum RWPerm {
     None,
     Read,
@@ -7,6 +8,7 @@ pub enum RWPerm {
 }
 
 // Users without password cannot login.
+#[derive(Debug)]
 pub struct User {
     name: Name,
     password: Option<String>,
@@ -17,7 +19,7 @@ pub struct User {
 }
 
 impl User {
-    pub fn new_user(name: Name) -> Self {
+    pub fn new_rw(name: Name) -> Self {
         User { name,
             password: None,
             has_perm_grant: false,
