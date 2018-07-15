@@ -58,6 +58,7 @@ Planned v2
 * Having
 * In (with index)
 * Like
+* Subqueries
 
 Implemented
 ...............................
@@ -77,7 +78,7 @@ Will not support (yet)
 Insert, update, delete
 -------------------------------
 
-Planned
+Planned v1
 ...............................
 
 * Insert literal
@@ -88,6 +89,12 @@ Planned
 * Created datetime
 * Last changed datetime
 * Prepared statements (only)
+
+Planned v2
+...............................
+
+* Subqueries
+* Insert from select
 
 Implemented
 ...............................
@@ -145,13 +152,17 @@ Planned v2
 
 * Locks (full table)
 * Permissions: read, write, ddl, grant
-* Transactions (TCL)
 * Auth/help server
 * Binary protocol (?)
-* Produce/use run stats
 * String interning
-* Dump/load binary backups
 * Reindex, reorder commands?
+
+Planned v3
+...............................
+
+* Transactions (TCL)
+* Produce/use run stats
+* Dump/load binary backups
 
 Implemented
 ...............................

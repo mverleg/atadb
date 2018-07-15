@@ -6,7 +6,7 @@ pub mod rows;
 pub mod intern;
 pub mod index;
 pub mod select;
-pub mod cud;
+pub mod modify;
 pub mod ddl;
 pub mod auth;
 pub mod util;
