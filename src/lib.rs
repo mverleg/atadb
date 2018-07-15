@@ -1,3 +1,4 @@
+extern crate sha2;
 
 pub mod control;
 pub mod tables;

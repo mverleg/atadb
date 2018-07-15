@@ -1,6 +1,6 @@
 
 /// File is structured as:
-/// - Schema version/hash (i64)
+/// - Schema version/hash (u64)
 /// - number of entries N (u32) <= capacity
 /// - per entry:
 ///   - 2 if empty, 1 if present (u8), anything else means corrupted
