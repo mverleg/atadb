@@ -174,3 +174,5 @@ Will not support (yet)
 
 * Multiple machines
 * Any control flow (begin, return, break, throw, continue, goto, while...)
+* Connected subqueries
+*

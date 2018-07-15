@@ -1,8 +1,7 @@
 use util::name::Name;
 use tables::data_type::DataType;
-use tables::table::Table;
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Column {
     name: Name,
     typ: DataType,

@@ -13,5 +13,5 @@ name = "atadb"
 serde = "1.0"
 serde_derive = "1.0"
 sha2 = "0.7.1"  # has to be stable
-
+app_dirs = "1.2"
 

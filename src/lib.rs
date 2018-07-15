@@ -1,4 +1,10 @@
 extern crate sha2;
+extern crate app_dirs;
+
+#[macro_use]
+extern crate log;
+#[macro_use]
+extern crate serde_derive;
 
 pub mod control;
 pub mod tables;

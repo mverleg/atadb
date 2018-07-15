@@ -1,23 +1,21 @@
 extern crate atadb;
-#[macro_use]
-extern crate serde_derive;
 
 use atadb::tables::data_type::DataType;
-use atadb::tables::database::Database;
+use atadb::tables::schema::Schema;
 use atadb::tables::table::Table;
 use atadb::tables::column::Column;
 use atadb::util::name::Name;
 use atadb::auth::user::User;
 
 fn main() {
-    Database::new(Name::valid("Person"), vec![
+    Schema::new(Name::valid("Person"), vec![
         Table::new(Name::valid("Person"), vec![
             Column::new(Name::valid("family_name"), DataType::String(Option::None)),
             Column::new(Name::valid("birthday"), DataType::Datetime),
             Column::new(Name::valid("salary"), DataType::Decimal(None, Some(2))),
         ])
     ],
-    vec![
+                vec![
         User::new_rw(Name::valid("mark")),
     ],);
 }

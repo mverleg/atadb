@@ -1,7 +1,7 @@
 use util::name::Name;
 use tables::column::Column;
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Table {
     name: Name,
     columns: Vec<Column>,

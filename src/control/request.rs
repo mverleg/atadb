@@ -15,8 +15,10 @@ pub struct DDLRequest {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct ModifyRequest {
-
+pub enum ModifyRequest {
+    Insert,
+    Delete,
+    Update,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
