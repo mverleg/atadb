@@ -1,22 +1,8 @@
-/// The request type is important for the type of lock.
+use auth::user::UserRef;
+use control::operation::Operation;
+
 #[derive(Debug, Serialize, Deserialize)]
-pub enum Request {
-    DDL,    // Locks schema and data
-    Modify, // Locks data for writing (no readers allowed)
-    Read,   // Doesn't lock, but needs no modify locks
+pub struct Request {
+    command: Operation,
+    user: UserRef,
 }
-
-// TODO @mverleg: should there be something for mixed select/write queries? the select part could be done in parallel before locking down to write
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct DDLRequest {}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub enum ModifyRequest {
-    Insert,
-    Delete,
-    Update,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct ReadRequest {}

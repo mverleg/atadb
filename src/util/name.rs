@@ -1,4 +1,4 @@
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Name {
     name: String,
 }

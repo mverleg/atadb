@@ -5,6 +5,7 @@ extern crate rand;
 extern crate serde_derive;
 #[macro_use]
 extern crate log;
+extern crate serde;
 
 pub mod auth;
 pub mod control;
