@@ -1,13 +1,15 @@
 extern crate atadb;
 
-use atadb::auth::user::User;
-use atadb::tables::column::Column;
-use atadb::tables::data_type::DataType;
-use atadb::tables::schema::Schema;
-use atadb::tables::table::Table;
-use atadb::util::name::Name;
+use atadb::daemon::auth::user::User;
+use atadb::daemon::tables::column::Column;
+use atadb::daemon::tables::data_type::DataType;
+use atadb::daemon::tables::schema::Schema;
+use atadb::daemon::tables::table::Table;
+use atadb::daemon::util::name::Name;
 
+/// Database process.
 fn main() {
+    println!("This is the database process");
     Schema::new(
         Name::valid("Person"),
         vec![Table::new(

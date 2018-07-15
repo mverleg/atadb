@@ -1,8 +1,8 @@
+use daemon::util::name::Name;
 use serde::Deserialize;
 use serde::Deserializer;
 use serde::Serialize;
 use serde::Serializer;
-use util::name::Name;
 
 #[derive(Debug)]
 pub enum RWPerm {

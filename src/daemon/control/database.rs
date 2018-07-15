@@ -1,8 +1,8 @@
-use auth::user::User;
-use control::dbconfig::DBConfig;
+use daemon::auth::user::User;
+use daemon::control::dbconfig::DBConfig;
+use daemon::tables::schema::Schema;
 use std::marker::PhantomData;
 use std::path::PathBuf;
-use tables::schema::Schema;
 
 pub struct Database {
     dir: PathBuf,

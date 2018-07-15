@@ -1,4 +1,4 @@
-use app_dirs::{data_root, AppDataType, AppInfo};
+use app_dirs::{app_dir, AppDataType, AppInfo};
 use std::env;
 use std::path::PathBuf;
 
@@ -26,12 +26,13 @@ pub fn locate_on_db_path(dbname: String) -> Option<PathBuf> {
         }
         None => (),
     };
+    // TODO @mverleg: change this to something like ~/.local/share/atadb
     match env::home_dir() {
-        Some(path) => paths.push(path.join("atadbs")),
+        Some(path) => paths.push(path.join(".atadb").join("dbs")),
         None => (),
     }
     // APP_INFO todo
-    match data_root(AppDataType::UserData) {
+    match app_dir(AppDataType::UserData, &APP_INFO, "dbs") {
         Ok(path) => paths.push(path),
         Err(err) => warn!("Could not create app data directory ({:?})", err),
     }

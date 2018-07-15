@@ -1,5 +1,5 @@
-use tables::table::Table;
-use util::name::Name;
+use daemon::tables::table::Table;
+use daemon::util::name::Name;
 
 #[derive(Debug)]
 pub struct Schema {

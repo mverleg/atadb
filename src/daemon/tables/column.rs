@@ -1,5 +1,5 @@
-use tables::data_type::DataType;
-use util::name::Name;
+use daemon::tables::data_type::DataType;
+use daemon::util::name::Name;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Column {

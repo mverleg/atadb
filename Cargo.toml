@@ -1,7 +1,7 @@
 [package]
 name = "atadb"
 description = "atadb will be a simple but fast relational database that supports a subset of SQL"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Mark <mverleg.noreply@gmail.com>"]
 repository = "https://github.com/mverleg/atadb"
 include = [
@@ -13,9 +13,16 @@ license = "Apache-2.0"
 
 [lib]
 name = "atadb"
+path = "src/lib.rs"
 
 [[bin]]
+# TODO change to atadb-cli if possible
 name = "atadb"
+path = "src/cli/main.rs"
+
+[[bin]]
+name = "atadb-daemon"
+path = "src/daemon/main.rs"
 
 [dependencies]
 serde = "1.0"

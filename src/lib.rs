@@ -7,13 +7,19 @@ extern crate serde_derive;
 extern crate log;
 extern crate serde;
 
-pub mod auth;
-pub mod control;
-pub mod ddl;
-pub mod index;
-pub mod intern;
-pub mod modify;
-pub mod rows;
-pub mod select;
-pub mod tables;
-pub mod util;
+pub mod shared {}
+
+pub mod daemon {
+    pub mod auth;
+    pub mod control;
+    pub mod ddl;
+    pub mod index;
+    pub mod intern;
+    pub mod modify;
+    pub mod rows;
+    pub mod select;
+    pub mod tables;
+    pub mod util;
+}
+
+pub mod cli {}
