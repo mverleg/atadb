@@ -1,4 +1,6 @@
 extern crate atadb;
+#[macro_use]
+extern crate serde_derive;
 
 use atadb::tables::data_type::DataType;
 use atadb::tables::database::Database;
