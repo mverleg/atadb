@@ -18,6 +18,6 @@ fn main() {
                 Column::new(Name::valid("salary"), DataType::Decimal(None, Some(2))),
             ],
         )],
-//        vec![User::new_rw(Name::valid("mark"))],
+        //        vec![User::new_rw(Name::valid("mark"))],
     );
 }

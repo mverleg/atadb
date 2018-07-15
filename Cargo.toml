@@ -4,6 +4,11 @@ description = "atadb will be a simple but fast relational database that supports
 version = "0.1.0"
 authors = ["Mark <mverleg.noreply@gmail.com>"]
 repository = "https://github.com/mverleg/atadb"
+include = [
+    "**/*.rst",
+    "**/*.rs",
+    "Cargo.toml",
+]
 
 [lib]
 name = "atadb"
@@ -18,9 +23,3 @@ serde_derive = "1.0"
 app_dirs = "1.2"
 log = "0.4"
 rand = "0.5"
-
-include = [
-    "**/*.rst",
-    "**/*.rs",
-    "Cargo.toml",
-]
