@@ -1,4 +1,3 @@
-
 /// File is structured as:
 /// - Schema version/hash (u64)
 /// - number of entries N (u32) <= capacity
@@ -18,16 +17,10 @@
 /// - from byte 39: entry#2
 /// - from byte 51: <garbage to fill filesize>
 
-pub struct RowFile {
-
-}
+pub struct RowFile {}
 
 impl RowFile {
-    pub fn write_all() {
+    pub fn write_all() {}
 
-    }
-
-    pub fn read_all() {
-
-    }
+    pub fn read_all() {}
 }

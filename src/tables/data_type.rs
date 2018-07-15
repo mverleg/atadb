@@ -1,4 +1,3 @@
-
 #[derive(Debug, Serialize, Deserialize)]
 pub enum DataType {
     Bool,

@@ -20,10 +20,12 @@ pub struct User {
 
 impl User {
     pub fn new_rw(name: Name) -> Self {
-        User { name,
+        User {
+            name,
             password: None,
             has_perm_grant: false,
             has_perm_ddl: false,
-            perm_rw: RWPerm::ReadWrite }
+            perm_rw: RWPerm::ReadWrite,
+        }
     }
 }

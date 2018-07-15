@@ -12,6 +12,7 @@ name = "atadb"
 [dependencies]
 serde = "1.0"
 serde_derive = "1.0"
-sha2 = "0.7.1"  # has to be stable
+#sha2 = "0.7.1"  # has to be stable
 app_dirs = "1.2"
-
+log = "0.4"
+rand = "0.5"

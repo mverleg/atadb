@@ -1,4 +1,3 @@
-
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Name {
     name: String,
@@ -7,7 +6,7 @@ pub struct Name {
 impl Name {
     pub fn new(name: String) -> Option<Self> {
         for chr in name.chars() {
-            if ! chr.is_alphabetic() && chr != '_' {
+            if !chr.is_alphabetic() && chr != '_' {
                 return Option::None;
             }
         }

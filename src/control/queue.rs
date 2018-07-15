@@ -1,4 +1,1 @@
-
-pub struct RequestQueue {
-
-}
+pub struct RequestQueue {}

@@ -1,35 +1,57 @@
-
-use std::path::Path;
+use app_dirs::{data_root, AppDataType, AppInfo};
 use std::env;
+use std::path::PathBuf;
 
 const ATA_PATH_NAME: &'static str = "ATADB_PATH";
-const APP_INFO: AppInfo = AppInfo { name: "atadb", author: "atadb" };
+const APP_INFO: AppInfo = AppInfo {
+    name: "atadb",
+    author: "atadb",
+};
 
-pub fn locate_on_db_path(dbname: String) -> Option<Path> {
-    let mut paths = Vec::new();
+pub fn locate_on_db_path(dbname: String) -> Option<PathBuf> {
+    let mut paths: Vec<PathBuf> = Vec::new();
     match env::var_os(ATA_PATH_NAME) {
         Some(value) => {
             for path in env::split_paths(&value) {
-                if (exists(path)) {
-                    paths.append(path);
+                if !path.exists() {
+                    paths.push(path);
                 } else {
-                    warn!("Directory {} was found in {}, but it cannot be found.", path.display(), ATA_PATH_NAME);
+                    warn!(
+                        "Directory \"{}\" was found in environment {}, but it cannot be found.",
+                        path.display(),
+                        ATA_PATH_NAME
+                    );
                 }
             }
         }
-        None => ()
+        None => (),
     };
     match env::home_dir() {
-        Some(path) => paths.append(path.join("atadbs")),
+        Some(path) => paths.push(path.join("atadbs")),
         None => (),
     }
     // APP_INFO todo
     match data_root(AppDataType::UserData) {
-        Ok(path) => paths.append(path),
-        Err(_) => (),
+        Ok(path) => paths.push(path),
+        Err(err) => warn!("Could not create app data directory ({:?})", err),
     }
+    let mut found: Option<PathBuf> = None;
     for path in paths {
-        ()
+        let dbpath = path.join(&dbname).with_extension(".atadb");
+        if dbpath.exists() {
+            if let Some(prev) = &found {
+                warn!(
+                    "Found database {} at \"{}\", but another one was found at \"{}\"",
+                    dbname,
+                    dbpath.display(),
+                    prev.display()
+                );
+                continue;
+            }
+            found = Some(dbpath);
+        } else {
+            debug!("Searching for {} at \"{}\"", dbname, dbpath.display());
+        }
     }
-    Option::None
+    found
 }

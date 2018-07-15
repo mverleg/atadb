@@ -1,4 +1,3 @@
-
 /// File is structured as:
 /// - number of entries N (u32) <= capacity
 /// - for each entry (N times) except the first, ordered by appearance:
@@ -25,6 +24,4 @@
 /// - from byte 68+15: <garbage to fill filesize>
 // TODO @mverleg: it may be necessary at some point to add back-references for cleanup
 
-pub struct InternFile {
-
-}
+pub struct InternFile {}

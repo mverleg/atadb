@@ -1,5 +1,4 @@
 use tables::table::Table;
-use auth::user::User;
 use util::name::Name;
 
 #[derive(Debug)]
