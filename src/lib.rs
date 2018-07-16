@@ -1,5 +1,6 @@
 extern crate app_dirs;
 extern crate rand;
+extern crate clap;
 
 #[macro_use]
 extern crate serde_derive;
