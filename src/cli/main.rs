@@ -7,8 +7,7 @@ use std::env;
 
 /// Command line interface.
 pub fn main() {
-    // TODO @mverleg: error if not either --version, --help or a subcommand
-    let mut app = App::new(env!("CARGO_PKG_NAME").to_owned() + " Daemon")
+    let mut app = App::new(env!("CARGO_PKG_NAME").to_owned() + " command-line interface")
         .version(env!("CARGO_PKG_VERSION"))
         .author(env!("CARGO_PKG_AUTHORS"))
         .about(env!("CARGO_PKG_DESCRIPTION"))
@@ -20,25 +19,25 @@ pub fn main() {
         .arg(Arg::with_name("version")
             .long("version")
             .help("Show the version and exit"))
-        .subcommand(SubCommand::with_name("new")
-            .about("Create a new database")
-            .arg(Arg::with_name("INPUT")
-                .help("Sets the directory where the database is to be created")
+        .subcommand(SubCommand::with_name("connect")
+            .about("Connect to a database")
+            .arg(Arg::with_name("DB")
+                .help("The name of the database to connect to")
                 .required(true)
                 .index(1)))
-        .subcommand(SubCommand::with_name("delete")
-            .about("Delete an existing database (careful!)")
-            .arg(Arg::with_name("INPUT")
-                .help("Sets the directory of the database to be deleted")
+        .subcommand(SubCommand::with_name("disconnect")
+            .about("Disconnect from a database")
+            .arg(Arg::with_name("DB")
+                .help("The name of the database to disconnect from")
                 .required(true)
                 .index(1)))
-        .subcommand(SubCommand::with_name("start")
-            .about("Start a server for the database that you can run queries against")
-            .arg(Arg::with_name("INPUT")
-                .help("Sets the directory of the database is start")
-                .required(true)
-                .index(1))
-        );
+//        .subcommand(SubCommand::with_name("start")
+//            .about("Start a server for the database that you can run queries against")
+//            .arg(Arg::with_name("INPUT")
+//                .help("Sets the directory of the database is start")
+//                .required(true)
+//                .index(1))
+    ;
     if (env::args().len() <= 1) {
         app.print_help();
         return;
@@ -48,6 +47,5 @@ pub fn main() {
         println!("{}", env!("CARGO_PKG_VERSION"));
         return;
     }
-
-//    app.print_help();
+    unimplemented!();
 }
