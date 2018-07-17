@@ -1,8 +1,8 @@
-use daemon::util::name::Name;
 use serde::Deserialize;
 use serde::Deserializer;
 use serde::Serialize;
 use serde::Serializer;
+use shared::util::name::Name;
 
 #[derive(Debug)]
 pub enum RWPerm {
@@ -23,7 +23,8 @@ pub struct UserRef {
 #[derive(Debug)]
 pub struct User {
     name: Name,
-    password: Option<String>, // todo
+    password: Option<String>,
+    // todo
     has_perm_grant: bool,
     has_perm_ddl: bool,
     perm_rw: RWPerm,

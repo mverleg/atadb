@@ -21,8 +21,17 @@ name = "atadb"
 path = "src/cli/main.rs"
 
 [[bin]]
-name = "atadb-daemon"
-path = "src/daemon/main.rs"
+# TODO change to atadb-cli if possible
+name = "atadb-cli-daemon"
+path = "src/cli/daemon.rs"
+
+[[bin]]
+name = "atadb-planner"
+path = "src/planner/main.rs"
+
+[[bin]]
+name = "atadb-librarian"
+path = "src/librarian/main.rs"
 
 [dependencies]
 serde = "1.0"

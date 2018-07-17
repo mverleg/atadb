@@ -1,4 +1,4 @@
-use daemon::util::hash::make_salt;
+use shared::util::hash::make_salt;
 
 pub struct DBConfig {
     salt: Vec<u8>,
