@@ -3,9 +3,10 @@ extern crate clap;
 extern crate rand;
 
 #[macro_use]
+extern crate log;
+#[macro_use]
 extern crate serde_derive;
 #[macro_use]
-extern crate log;
 extern crate serde;
 
 pub mod shared;
