@@ -14,7 +14,51 @@ pub type uCol = u16;
 pub type uRow = u32;
 /// Global string interning pool pointer size (>=1)
 //noinspection RsTypeAliasNaming
-pub type uStr = u32;
+pub type uIntrn = u32;
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Hash, Default)]
+pub struct TableIx {
+    index: uTab,
+}
+
+impl From<TableIx> for usize {
+    fn from(value: TableIx) -> usize {
+        value.index as usize
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Hash, Default)]
+pub struct ColumnIx {
+    index: uCol,
+}
+
+impl From<ColumnIx> for usize {
+    fn from(value: ColumnIx) -> usize {
+        value.index as usize
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Hash, Default)]
+pub struct RowIx {
+    index: uTab,
+}
+
+impl From<RowIx> for usize {
+    fn from(value: RowIx) -> usize {
+        value.index as usize
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Hash, Default)]
+pub struct InternIx {
+    index: uTab,
+}
+
+impl From<InternIx> for usize {
+    fn from(value: InternIx) -> usize {
+        value.index as usize
+    }
+}
 
 #[cfg(test)]
 mod tests {
